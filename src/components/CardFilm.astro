@@ -1,6 +1,5 @@
 ---
 const {...film} = Astro.props
-import { Picture } from 'astro:assets'
 import { formatDate } from "../js/helpers";
 ---
 
@@ -10,7 +9,7 @@ import { formatDate } from "../js/helpers";
 >
   <div class="">
     <div class="lg:group-hover:scale-110 h-60 lg:duration-500"
-        ><Picture src={film.img} alt="" width="1000" height="1000" />
+        ><img src={film.img} alt="" width="1000" height="1000" />
     </div>
     <div
       class="absolute -translate-y-12 w-56 left-0 p-5 -bottom-10 duration-500 lg:group-hover:-translate-y-12"
