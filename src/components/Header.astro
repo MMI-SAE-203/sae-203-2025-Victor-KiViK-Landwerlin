@@ -1,0 +1,66 @@
+---
+import Button from '../components/Button.astro';
+const currentPath = Astro.url.pathname;
+---
+<header class="flex items-center justify-between border-b-2 bg-black border-b-white h-20">
+  <a href="/">
+    <h1 class="text-Orbitron text-white neon-glow">Sci'Fistival</h1>
+  </a>
+  <button
+    id="menu-btn"
+    class="group relative z-10 flex h-3 w-6 flex-col justify-between lg:hidden *:block *:ease *:h-0.5 *:w-full *:transform *:rounded-full *:bg-white *:transition *:duration-300"
+    aria-label="Menu"
+    aria-controls="menu"
+    aria-expanded="false"
+  >
+    <span class="group-aria-expanded:translate-y-[5px] group-aria-expanded:rotate-45"></span>
+    <span class="group-aria-expanded:-translate-y-[5px] group-aria-expanded:-rotate-45"></span>
+  </button>
+  <nav
+    id="menu"
+    class=" flex-1 px-6 py-12 flex justify-between mt-20 flex-col z-10 inset-0 bg-indigo-950 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
+    aria-hidden="true"
+  >
+    <ul class="flex flex-col gap-4 lg:flex-row">
+      <li>
+        <a class={`block p-4 rounded-lg text-gray-500 ${currentPath === '/programmation' ? 'text-indigo-600 font-bold max-lg:bg-indigo-100 max-lg:rounded-lg' : ''}`} 
+        href="/">Programmation</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-gray-500" href="/invites">Invités</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-gray-500" href="/lieu">Lieu</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-gray-500" href="/about">À Propos</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-gray-500" href="/contact">Contact</a>
+      </li>
+    </ul>
+    <div class="flex items-center justify-center gap-4 px-4">
+      <Button variant="outlined" url="/login" text="Connexion" />
+      <Button variant="dark" url="/signup" text="S'inscrire" />
+    </div>
+  </nav>
+</header>
+
+<script>
+  // On cible les éléments à modifier
+  const toggle = document.querySelector("#menu-btn");
+  const nav = document.querySelector("#menu");
+  const page = document.body;
+
+  // Vérifier si les éléments existent avant d'ajouter l'événement
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.ariaExpanded === "true";
+      const isClosed = !isOpen;
+      // Mise à jour des attributs ARIA pour accessibilité
+      toggle.ariaExpanded = String(isClosed);
+      nav.ariaHidden = String(isOpen);
+      page.classList.toggle("noscroll", isClosed);
+    });
+  }
+</script>
