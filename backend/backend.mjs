@@ -61,3 +61,5 @@ export async function UpdateInviteById(id, data) {
     const record = await pb.collection('invite').updateOne(id, data);
     return record;
 }
+////////////////////////////////////////////////////////////////////////////////////
+

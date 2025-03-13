@@ -2,9 +2,9 @@
 import Button from '../components/Button.astro';
 const currentPath = Astro.url.pathname;
 ---
-<header class="flex items-center justify-between border-b-2 bg-black border-b-white h-20">
+<header class="flex items-center bg-black justify-between px-4 gap-8 border-b-2 border-b-indigo-100 h-20">
   <a href="/">
-    <h1 class="text-Orbitron text-white neon-glow">Sci'Fistival</h1>
+    <h1 class="  text-Orbitron text-white neon-glow text-3xl">SciFi'stival</h1>
   </a>
   <button
     id="menu-btn"
@@ -18,25 +18,29 @@ const currentPath = Astro.url.pathname;
   </button>
   <nav
     id="menu"
-    class=" flex-1 px-6 py-12 flex justify-between mt-20 flex-col z-10 inset-0 bg-indigo-950 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
+    class="flex-1 px-6 py-12 flex justify-between mt-20 flex-col fixed z-10 inset-0 bg-blue-950 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
     aria-hidden="true"
   >
     <ul class="flex flex-col gap-4 lg:flex-row">
       <li>
-        <a class={`block p-4 rounded-lg text-gray-500 ${currentPath === '/programmation' ? 'text-indigo-600 font-bold max-lg:bg-indigo-100 max-lg:rounded-lg' : ''}`} 
-        href="/">Programmation</a>
+        <a class={`block p-4 rounded-lg text-white ${currentPath === '/programmation' ? 'font-extrabold max-lg:bg-blue-800 max-lg:rounded-lg' : ''}`} 
+        href="/programmation">Programmation</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-gray-500" href="/invites">Invités</a>
+        <a class={`block p-4 rounded-lg text-white ${currentPath === '/invites' ? 'font-extrabold max-lg:bg-blue-800 max-lg:rounded-lg' : ''}`} 
+        href="/invites">Invités</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-gray-500" href="/lieu">Lieu</a>
+        <a class={`block p-4 rounded-lg text-white ${currentPath === '/lieu' ? 'font-extrabold max-lg:bg-blue-800 max-lg:rounded-lg' : ''}`} 
+        href="/lieu">Lieu</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-gray-500" href="/about">À Propos</a>
+        <a class={`block p-4 rounded-lg text-white ${currentPath === '/about' ? 'font-extrabold max-lg:bg-blue-800 max-lg:rounded-lg' : ''}`} 
+        href="/about">À Propos</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-gray-500" href="/contact">Contact</a>
+        <a class={`block p-4 rounded-lg text-white ${currentPath === '/contact' ? 'font-extrabold max-lg:bg-blue-800 max-lg:rounded-lg' : ''}`} 
+        href="/contact">Contact</a>
       </li>
     </ul>
     <div class="flex items-center justify-center gap-4 px-4">
