@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { getInvite } from "../../../backend/backend.mjs";
+import { Picture } from 'astro:assets'
+
+const { id } = Astro.params;
+const invite = await getInvite(id);
+if(!invite){
+    return Astro.redirect('/invites')
+}
+---
+<Layout>
+    <div class="lg:flex lg:flex-col  gap-6 p-6 lg:mt-10 bg-black">
+        <h1 class="text-white text-4xl font-orbitron">{invite.prenom} {invite.nom}</h1>
+        <div class="lg:flex ">
+            <Picture src={invite.img} alt={invite.prenom} width="500" height="500" class="p-10 w-full object-cover" />
+            <div class="lg:ml-32">
+                <h2 class="text-white">Rôle</h2>
+                <p class="text-white text-lg mb-11">{invite.role}</p>
+                <h2 class="text-white">Résumé</h2>
+                <p class="text-white text-lg mb-11">{invite.biographie}</p>
+                <h2 class="text-white">Contact</h2>
+                <p class="text-white text-lg">{invite.email}</p>
+            </div>
+        </div>
+    </div>
+</Layout>

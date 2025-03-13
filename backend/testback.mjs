@@ -1,4 +1,4 @@
-import { getAllMoviesSortedByDate } from './backend.mjs' ;
+import { addFilm, getAllMoviesSortedByDate } from './backend.mjs' ;
 import { getAllActivitesSortedByDate } from './backend.mjs' ;
 import { getAllActeurAndRealisateurSortedByNom } from './backend.mjs' ;
 import { getFilmById } from './backend.mjs' ;
@@ -67,6 +67,23 @@ try {
 try {
     const activite = await getActiviteByAnimateurId('LE NOM D UN ANIMATEUR') ;
     console.log(activite) ;
+}
+catch (e) {
+    console.error(e) ;
+}
+
+try {
+    const film = await addFilm({titre: 'test', annee_de_sortie: 2025, genre: 'test', description: 'test', liste_acteur: 'test'}) ;
+    console.log(film) ;
+}
+catch (e) {
+    console.error(e) ;
+}
+
+
+try {
+    const film = await UpdateFilmById('ccrrsk6lkzk9ky4', {titre: 'test2', annee_de_sortie: 2029, genre: 'test2', description: 'test2', liste_acteur: 'test2'}) ;
+    console.log(film) ;
 }
 catch (e) {
     console.error(e) ;

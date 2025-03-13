@@ -1,0 +1,29 @@
+---
+const {...film} = Astro.props
+import { Picture } from 'astro:assets'
+import { formatDate } from "../js/helpers";
+---
+
+<a href={`/programmation/${film.id}`}>
+    <div
+  class="relative group lg:cursor-pointer lg:overflow-hidden lg:duration-500 w-64 h-[350px] bg-zinc-800 text-gray-50 p-5"
+>
+  <div class="">
+    <div class="lg:group-hover:scale-110 h-60 lg:duration-500"
+        ><Picture src={film.img} alt="" width="1000" height="1000" />
+    </div>
+    <div
+      class="absolute -translate-y-12 w-56 left-0 p-5 -bottom-10 duration-500 lg:group-hover:-translate-y-12"
+    >
+      <div
+        class="absolute -z-10 left-0 w-64 h-20 lg:h-28 bg-blue-900 opacity-85 lg:opacity-0 lg:duration-500 lg:group-hover:opacity-75 lg:group-hover:bg-blue-900"
+      ></div>
+      <span class="text-xl font-bold">{film.titre}</span>
+      <span>{formatDate(film.date_projection)}</span>
+      <p class="lg:group-hover:opacity-100 w-56 lg:duration-500 lg:opacity-0">
+        En savoir plus
+      </p>
+    </div>
+  </div>
+</div>
+</a>

@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+---
+<Layout>
+    <body class=" text-white p-6">
+        <main class="max-w-4xl mx-auto p-8 rounded-lg shadow-lg">
+            <h1 class="text-4xl text-white text-center mb-6">Infos Pratiques</h1>
+    
+            <section>
+                <h2 class="text-2xl font-semibold text-white text-center mb-6">Tarifs</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <div class=" flex flex-col items-center bg-white text-black p-6 rounded-lg shadow-lg transition-all hover:scale-105">
+                        <h3 class="text-xl font-orbitron font-semibold mb-2">Tarif plein</h3>
+                        <p class="text-3xl font-orbitron font-semibold">10€</p>
+                    </div>
+                    <div class="flex flex-col items-center bg-white text-black p-6 rounded-lg shadow-lg transition-all hover:scale-105">
+                        <h3 class="text-xl font-orbitron font-semibold mb-2">Tarif réduit</h3>
+                        <p class="text-3xl font-orbitron font-semibold">8€</p>
+                    </div>
+                    <div class="flex flex-col items-center bg-white text-black p-6 rounded-lg shadow-lg transition-all hover:scale-105">
+                        <h3 class="text-xl font-orbitron font-semibold mb-2">Tarif enfant</h3>
+                        <p class="text-3xl font-orbitron font-semibold">5€</p>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Lieux -->
+            <section class="mt-12">
+                <h2 class="text-2xl font-semibold text-center text-white mb-6">Lieux</h2>
+                <div class="flex justify-center">
+                    <iframe 
+                        class="w-full max-w-lg h-64 md:h-96 rounded-lg shadow-lg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.3455490829397!2d6.87131252590293!3d47.63885157119281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47923b5785e387f3%3A0x6844bbe18faf0b21!2sMaison%20de%20Quartier%20des%20Glacis%20du%20Ch%C3%A2teau-%20centre%20OiKOS!5e0!3m2!1sfr!2sfr!4v1734084503059!5m2!1sfr!2sfr" 
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+        </main>
+    </body>
+</Layout>

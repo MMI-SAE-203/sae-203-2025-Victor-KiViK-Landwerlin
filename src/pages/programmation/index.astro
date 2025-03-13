@@ -1,9 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
+import CardFilm from "../../components/CardFilm.astro";
+import { getFilms } from "../../../backend/backend.mjs";
 
+
+const films = await getFilms();
 ---
 
 <Layout>
-    <h>Programmation</h1>
+    <h1 class="text-white flex justify-center lg:text-4xl mt-8">Films au programme</h1>
+    <section class="flex flex-wrap justify-center gap-6 p-6 lg:mt-10 bg-black">
+        {films?.map((film) => (
+            <CardFilm {...film} />
+        ))}
+    </section>
 </Layout>

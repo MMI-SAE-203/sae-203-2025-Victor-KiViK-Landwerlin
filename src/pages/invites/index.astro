@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import CardInvites from "../../components/CardInvites.astro";
+import { getInvites } from "../../../backend/backend.mjs";
+
+
+const invites = await getInvites();
+---
+
+<Layout>
+    <h1 class="text-white flex justify-center lg:text-4xl mt-8">Invites au programme</h1>
+    <section class="flex flex-wrap justify-center gap-6 p-6 lg:mt-10 bg-black">
+        {invites?.map((invite) => (
+            <CardInvites {...invite} />
+        ))}
+    </section>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { getFilm } from "../../../backend/backend.mjs";
+import { Picture } from 'astro:assets'
+
+const { id } = Astro.params;
+const film = await getFilm(id);
+if(!film){
+    return Astro.redirect('/programmation')
+}
+---
+<Layout>
+    <div class="lg:flex lg:flex-col  gap-6 p-6 lg:mt-10 bg-black">
+        <h1 class="text-white text-4xl font-orbitron">{film.titre}</h1>
+        <div class="lg:flex ">
+            <Picture src={film.img} alt={film.titre} width="500" height="500" class="p-10 w-full object-cover" />
+            <div class="lg:ml-32">
+                <h2 class="text-white">Année de sortie</h2>
+                <p class="text-white text-lg mb-11">{film.annee_de_sortie}</p>
+                <h2 class="text-white">Résumé</h2>
+                <p class="text-white text-lg mb-11">{film.description}</p>
+                <h2 class="text-white">Distribution</h2>
+                <p class="text-white text-lg">{film.liste_acteur}</p>
+            </div>
+        </div>
+    </div>
+</Layout>
