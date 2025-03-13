@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase' ;
-const pb = new PocketBase('http://127.0.0.1:8090') ;
+const pb = new PocketBase('https://scifistival.victor-landwerlin.fr') ;
 
 export async function getAllMoviesSortedByDate() {
     const records = await pb.collection('film').getFullList({
