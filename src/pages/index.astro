@@ -1,54 +1,12 @@
 ---
-import Button2 from '../components/Button2.astro';
-import Layout from '../layouts/Layout.astro';
-import { Picture } from 'astro:assets'
-import imageherolg from '../assets/image/imageherolg.webp';
-import imgcard1 from '../assets/image/imgcard1.webp';
-import imgcard2 from '../assets/image/imgcard2.webp';
+import App from "../components/App.jsx";
+import "../styles/global.css";
 ---
 
-<Layout>
-<Picture class="absolute h-[75%] object-cover top-0 z-[-10000]" src={imageherolg} alt=""/>
-<h2 class="text-white p-5 text-2xl lg:text-4xl lg:p-20 lg:leading-28">Venez assister au SciFi’stival de Belfort, dans l’espoir de rencontrer vos âmes sœurs cinématographiques !</h2>
-<section class="text-white text-2xl bg-black pt-5 lg:pt-10 lg:text-6xl">
-    <div class="flex gap-2 lg:gap-10 justify-center">
-        <h4>+5000</h4>
-        <p>personnes attendus</p>
-    </div>
-    <div class="flex gap-2 lg:gap-10 justify-center mt-2 lg:mt-8 ">
-        <p>Weekend du</p>
-        <h4>14 mars</h4> 
-    </div>
-    <div class="flex justify-center mt-5 lg:mt-10">
-        <Button2 />
-    </div>
-</section>
-<section class="flex flex-wrap justify-center lg:gap-40 gap-6 p-6 lg:mt-10 bg-black">
-    <div class="w-80 bg-white text-black rounded-bl-xl shadow-lg overflow-hidden relative">
-        <Picture src={imgcard2} alt="Programme" class="w-full h-48 object-cover" />
-        <h2 class="absolute top-35 left-4 text-white text-2xl font-orbitron shadow-md">Programme</h2>
-        <div class="p-4 font-lexend">
-            <p class="text-base">Découvrez les films à l’affiche du festival. Entre classiques et belles découvertes.</p>
-            <a href="programmation.html" class="flex items-center text-black font-orbitron uppercase font-bold mt-4">En savoir plus <span class="ml-2 text-lg">&gt;</span></a>
-        </div>
-    </div>
-
-    <div class="w-80 bg-white text-black rounded-bl-xl shadow-lg overflow-hidden relative">
-        <Picture src={imgcard1} alt="Invités" class="w-full h-48 object-cover" />
-        <h2 class="absolute top-35 left-4 text-white text-2xl font-orbitron shadow-md">Invités</h2>
-        <div class="p-4 font-lexend">
-            <p class="text-base">Des invités prestigieux nous font l’honneur de nous rejoindre pour ce festival.</p>
-            <a href="invites" class="flex items-center text-black font-orbitron uppercase font-bold mt-4">En savoir plus <span class="ml-2 text-lg">&gt;</span></a>
-        </div>
-    </div>
-
-    <div class="w-80 bg-white text-black rounded-bl-xl shadow-lg overflow-hidden relative">
-        <Picture src={imgcard2} alt="Le Festival" class="w-full h-48 object-cover" />
-        <h2 class="absolute top-35 left-4 text-white text-2xl font-orbitron shadow-md">Le Festival</h2>
-        <div class="p-4 font-lexend">
-            <p class="text-base">Découvrez l’histoire du festival et les valeurs qui nous animent.</p>
-            <a href="about" class="flex items-center text-black font-orbitron uppercase font-bold mt-4">En savoir plus <span class="ml-2 text-lg">&gt;</span></a>
-        </div>
-    </div>
-</section>
-</Layout>
+<html>
+  <head><title>Generateur de Tatouage IA</title></head>
+  <body class="bg-gray-100 p-10">
+    <h1 class="text-3xl font-bold text-center mb-6">Tatouage par IA 🐉</h1>
+    <App client:load />
+  </body>
+</html>
