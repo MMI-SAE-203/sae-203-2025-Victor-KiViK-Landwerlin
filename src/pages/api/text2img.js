@@ -95,7 +95,7 @@ export async function POST({ request }) {
     const response = await fetch("https://api.stability.ai/v2beta/stable-image/generate/sd3", {
       method: "POST",
       headers: {
-        Authorization: `Bearer sk-uU7XtRew0kaInbOVwTBiAl10vXs3TAnpCEKBhk4bwhcoOXvS`,
+        Authorization: `Bearer sk-tFiCv7tokhd5Xc0qA3scApd98fwSsH0EtLNTRy57DqL7CcpD`,
         Accept: "image/*"
       },
       body: formData
